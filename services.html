@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #fff;
+}
+.container {
+  position: relative;
+  display: flex;
+  padding: 80px 40px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 80px;
+}
+.card {
+  position: relative;
+  width: 350px;
+  height: 180px;
+  background-color: #333;
+  transition: 0.5s;
+  overflow: visible; /* Ensure overflow is visible */
+}
+.card:hover {
+  height: 450px;
+}
+.card .lines {
+  position: absolute;
+  inset: 0;
+  background-color: #000;
+  overflow: hidden;
+}
+.card .lines::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 600px;
+  height: 120px;
+  background: linear-gradient(transparent, #45f3ff, #45f3ff, #45f3ff, transparent);
+  animation: animate 4s linear infinite;
+  animation-play-state: paused;
+}
+.card:hover .lines::before {
+  animation-play-state: running;
+}
+.card .lines::after {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  background: #292929;
+}
+.card .img {
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  width: 150px;
+  height: 150px;
+  transform: translateX(-50%);
+  background: #000;
+  transition: 0.5s;
+  z-index: 1;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card:hover .img {
+  top: 25px;
+  width: 250px;
+  height: 250px;
+}
+
+.card .img::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  height: 150px;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(transparent, #ff3c7b, #ff3c7b, #ff3c7b, transparent);
+  animation: animate2 6s linear infinite;
+  animation-play-state: paused;
+}
+
+.card:hover .img::before {
+  animation-play-state: running;
+}
+
+.card .img::after {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  background: #292929;
+}
+
+.card .img img {
+  position: absolute;
+  width: 100px;
+  z-index: 1;
+  filter: invert(1);
+  opacity: 0.5;
+  transition: 0.5s;
+}
+
+.card:hover .img img {
+  opacity: 1;
+}
+
+.card .content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+.card .content .details {
+  padding: 30px 20px;
+  text-align: center;
+  color: #fff;
+  width: 100%;
+  transition: 0.5s;
+}
+
+.card .content .details p {
+  opacity: 0;
+  transform: translateY(145px);
+  transition: 0.5s;
+}
+
+.card:hover .content .details p {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card .content h2 {
+  position: absolute;
+  bottom: 20px; /* Position at the bottom of the image */
+  left: 50%;
+  transform: translateX(-50%);
+  color: #45f3ff;
+  font-size: 1.5rem;
+  z-index: 2; /* Ensure the heading is above the image */
+  opacity: 1;
+  transition: 0.5s;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card:hover .content h2 {
+  bottom: 110px; /* Move above the description on hover */
+}
+
+@keyframes animate {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes animate2 {
+  0% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="card">
+    <div class="lines"></div>
+    <div class="img">
+      <img src="images/ambulance.png" alt="ambulance">
+    </div>
+    <div class="content">
+      <h2>Call Ambulance</h2>
+      <div class="details">
+        <p>In case of medical emergencies, our 24/7 ambulance service ensures rapid response to get you the care you need, when you need it the most.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="lines"></div>
+    <div class="img">
+      <img src="images/first-aid-box.png" alt="first-aid">
+    </div>
+    <div class="content">
+      <h2>Get Medical Aid</h2>
+      <div class="details">
+        <p>Our expert medical aid team provides prompt and professional care in any situation. Whether it's an emergency or routine medical assistance, we are here to ensure your well-being.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="lines"></div>
+    <div class="img">
+      <img src="images/medical.png" alt="medical">
+    </div>
+    <div class="content">
+      <h2>Ambulances</h2>
+      <div class="details">
+        <p>Count on our fast and reliable ambulance service, available 24/7 to respond to emergencies with speed and care. Your safety is our top priority.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="lines"></div>
+    <div class="img">
+      <img src="images/hospital-building.png" alt="hospital">
+    </div>
+    <div class="content">
+      <h2>Find a Hospital</h2>
+      <div class="details">
+        <p>Locate nearby hospitals quickly and easily. Our service helps you find the nearest healthcare facility to ensure you receive immediate attention.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="lines"></div>
+    <div class="img">
+      <img src="images/medical-team.png" alt="doctor">
+    </div>
+    <div class="content">
+      <h2>Consult a Doctor</h2>
+      <div class="details">
+        <p>Get in touch with qualified healthcare professionals. Our telemedicine service allows you to consult with doctors from the comfort of your home.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="lines"></div>
+    <div class="img">
+      <img src="images/medicine.png" alt="medication">
+    </div>
+    <div class="content">
+      <h2>Order Medication</h2>
+      <div class="details">
+        <p>Conveniently order your medications online and have them delivered to your doorstep. Ensure you never run out of essential medicines.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

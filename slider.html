@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Swiper demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+
+  <style>
+    html,
+    body {
+      position: relative;
+      height: 100%;
+    }
+
+    body {
+      background: #eee;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color: #000;
+      margin: 0;
+      padding: 0;
+    }
+
+    swiper-container {
+      width: 100%;
+      height: 600px;
+      position: relative;
+    }
+
+    swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Style for the overlay text */
+    .slide-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
+      font-size: 36px;
+    }
+
+    .slide-text h1 {
+      font-size: 48px;
+      margin: 0;
+      padding: 0;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    .slide-text p {
+      font-size: 18px;
+      margin-top: 10px;
+    }
+
+    .slide-text a {
+      color: #fff;
+      background-color: #fd7792; /* Customize button color */
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 15px;
+      display: inline-block;
+      font-size: 20px;
+    }
+
+    .slide-text a:hover {
+      background-color: #f5c6cb; /* Change color on hover */
+    }
+  </style>
+</head>
+
+<body>
+
+  <swiper-container class="mySwiper" pagination="true" pagination-dynamic-bullets="true" autoplay="true">
+    <swiper-slide>
+      <img src="image/slider-5.jfif" alt="Slide 1">
+      <div class="slide-text">
+        <h1>Welcome to Life Link</h1>
+        <p>Get ambulance services conveniently online on one touch</p>
+      </div>
+    </swiper-slide>
+    <swiper-slide>
+      <img src="image/slider-2.jpg" alt="Slide 2">
+      <div class="slide-text">
+        <h1>Welcome to Life Link</h1>
+        <p>Get ambulance services conveniently online on one touch</p>
+      </div>
+    </swiper-slide>
+    <swiper-slide>
+      <img src="image/slider-3.jpg" alt="Slide 3">
+      <div class="slide-text">
+        <h1>Welcome to Life Link</h1>
+        <p>Get ambulance services conveniently online on one touch</p>
+      </div>
+    </swiper-slide>
+    <swiper-slide>
+      <img src="image/slider-4.jpg" alt="Slide 4">
+      <div class="slide-text">
+        <h1>Welcome to Life Link</h1>
+        <p>Get ambulance services conveniently online on one touch</p>
+      </div>
+    </swiper-slide>
+    <swiper-slide>
+      <img src="image/slider-6.webp" alt="Slide 5">
+      <div class="slide-text">
+        <h1>Welcome to Life Link</h1>
+        <p>Get ambulance services conveniently online on one touch</p>
+      </div>
+    </swiper-slide>
+  </swiper-container>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+
+  <script>
+    const swiper = document.querySelector('.mySwiper');
+    swiper.autoplay = {
+      delay: 3000, // 3 seconds delay between slides
+      disableOnInteraction: false,
+    };
+    swiper.loop = true; // Enable infinite loop
+  </script>
+</body>
+
+</html>
